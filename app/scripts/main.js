@@ -1,9 +1,12 @@
+/* global $ */
+
 (function() {
+
+	'use strict';
 
 	var videoID, isPlaying = false;
 
 	$('.js-video-tab').on('click', function() {
-		
 		var panelTarget = $(this).attr('data-business');
 
 		if (!$(this).is('.active')) {
@@ -36,9 +39,8 @@
 		videoID = $(this).parent().next('.js-video').find('.wistia_embed').attr('id');
 
 		window.wistiaInit = function(w) {
-		  w.api(videoID).play();
-
-		  isPlaying = true;
+			w.api(videoID).play();
+			isPlaying = true;
 		};
 	});
 
@@ -48,9 +50,8 @@
 		videoID = $(this).prev().find('.wistia_embed').attr('id');
 
 		window.wistiaInit = function(w) {
-		  w.api(videoID).pause();
-
-		  isPlaying = false;
+			w.api(videoID).pause();
+			isPlaying = false;
 		};
 	});
 
