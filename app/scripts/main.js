@@ -27,13 +27,10 @@
 			}, 500);
 		}
 
-		if ($(window).width() <= 480) {
-		}
 	});
 
 	$('.js-play-btn').on('click', function(e) {
 		e.preventDefault();
-		console.log($(this).next().next());
 		$(this).parent().next('.js-video').addClass('playing');
 
 		videoID = $(this).parent().next('.js-video').find('.wistia_embed').attr('id');

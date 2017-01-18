@@ -13,23 +13,12 @@ body {
 .video-player {
   overflow: hidden;
   position: relative;
-
-  &--desktop {
-    display: none;
-    @include mq($min-width: 481px) {
-      display: block;
-    }
-  }
-
+  
   .container {
     margin: 0 auto;
     max-width: 1005px;
     position: relative;
     width: 100%;
-  }
-
-  &__panel {
-  
   }
 
   &__content {
@@ -41,19 +30,24 @@ body {
     @include mq($max-width: 768px) {
       padding: 50px;
     }
-    @include mq($max-width: 480px) {
-      padding: 20px;
-    }
   }
 
   &__quote {
     font-size: 24px;
     margin: 0 0 30px;
+
+    @include mq($max-width: 480px) {
+      font-size: 16px;
+    }
   }
 
   &__author {
     color: #8CD2D6;
     font-size: 20px;
+
+    @include mq($max-width: 480px) {
+      font-size: 16px;
+    }
   }
 
   &__play-btn {
@@ -96,6 +90,11 @@ body {
     &:hover {
       color: #fff;
     }
+
+    @include mq($max-width: 480px) {
+      right: 20px;
+      top: -60px;
+    }    
   }
 }
 
@@ -135,6 +134,8 @@ body {
     @include mq($max-width: 480px) {
       display: block;
       float: none;
+      height: 60px;
+      line-height: 60px;
       width: 100%;
     }
 
@@ -155,11 +156,21 @@ body {
         top: -10px;
         width: 0; 
         z-index: 4;
+        @include mq($max-width: 480px) {
+          display: none;
+        }
       }
     }
 
     img {
-      
+      width: auto;
+      height: 27px;
+    }
+
+    &[data-business="jawbone"] {
+      img {
+        height: 18px;
+      }
     }
   }
 }
